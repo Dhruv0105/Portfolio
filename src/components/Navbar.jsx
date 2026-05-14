@@ -47,7 +47,7 @@ export default function Navbar() {
             href="https://github.com/Dhruv0105" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="border border-[#c9a96e] h-[42px] px-8 text-[#c9a96e] uppercase tracking-[0.3em] text-[10px] font-mono hover:bg-[#c9a96e] hover:text-black transition-all duration-300 flex items-center justify-center"
+            className="border border-[#c9a96e] h-[42px] px-4 md:px-8 text-[#c9a96e] uppercase tracking-[0.3em] text-[10px] font-mono hover:bg-[#c9a96e] hover:text-black transition-all duration-300 flex items-center justify-center"
           >
 
             Github ↗
