@@ -1,4 +1,19 @@
+import { useState, useEffect } from "react";
+
 export default function Navbar() {
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") || "dark"
+  );
+
+  useEffect(() => {
+    if (theme === "light") {
+      document.documentElement.setAttribute("data-theme", "light");
+    } else {
+      document.documentElement.removeAttribute("data-theme");
+    }
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
 
   return (
 
@@ -49,6 +64,14 @@ export default function Navbar() {
             Github ↗
 
           </a>
+
+          <button
+            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+            className="border border-[#c9a96e] h-[42px] px-4 text-[#c9a96e] uppercase tracking-[0.2em] text-[10px] font-mono hover:bg-[#c9a96e] hover:text-black transition-all duration-300 flex items-center justify-center"
+            aria-label="Toggle Theme"
+          >
+            {theme === "light" ? "DARK" : "LIGHT"}
+          </button>
 
         </div>
 
