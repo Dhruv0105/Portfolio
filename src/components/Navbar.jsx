@@ -41,18 +41,20 @@ export default function Navbar() {
 
         </div>
 
-        <div className="flex items-center gap-14">
+        <div className="flex items-center gap-4 md:gap-14">
 
-          {["About", "Work", "Skills", "Contact"].map((item) => (
+          <div className="hidden md:flex items-center gap-14">
+            {["About", "Work", "Skills", "Contact"].map((item) => (
 
-            <a
-              key={item}
-              className="text-[10px] uppercase tracking-[0.35em] text-gray-600 hover:text-[#c9a96e] transition-all duration-300 cursor-pointer"
-            >
-              {item}
-            </a>
+              <a
+                key={item}
+                className="text-[10px] uppercase tracking-[0.35em] text-gray-600 hover:text-[#c9a96e] transition-all duration-300 cursor-pointer"
+              >
+                {item}
+              </a>
 
-          ))}
+            ))}
+          </div>
 
           <a 
             href="https://github.com/Dhruv0105" 

@@ -36,7 +36,7 @@ export default function Projects() {
             className="text-[#f5f0e8]"
             style={{
               fontFamily: "Cormorant Garamond",
-              fontSize: "clamp(3rem,6vw,5rem)",
+              fontSize: "clamp(2.5rem,6vw,5rem)",
               fontWeight: 300,
               lineHeight: 1,
             }}

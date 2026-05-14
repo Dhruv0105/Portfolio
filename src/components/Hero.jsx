@@ -14,8 +14,8 @@ export default function Hero() {
           className="w-full h-full"
           style={{
             backgroundImage: `
-              linear-gradient(#c9a96e 1px, transparent 1px),
-              linear-gradient(90deg, #c9a96e 1px, transparent 1px)
+              linear-gradient(var(--accent) 1px, transparent 1px),
+              linear-gradient(90deg, var(--accent) 1px, transparent 1px)
             `,
             backgroundSize: "60px 60px",
           }}
@@ -67,12 +67,11 @@ export default function Hero() {
           {/* heading */}
 
           <h1
-            className="leading-[0.9]"
+            className="leading-[0.9] text-[#f5f0e8]"
             style={{
               fontFamily: "Cormorant Garamond",
               fontWeight: 300,
-              fontSize: "clamp(5rem,8vw,8.5rem)",
-              color: "#f5f0e8",
+              fontSize: "clamp(2.5rem,8vw,8.5rem)",
             }}
           >
 
@@ -104,7 +103,7 @@ export default function Hero() {
 
           {/* buttons */}
 
-          <div className="flex gap-5 mt-14">
+          <div className="flex flex-col sm:flex-row gap-5 mt-14">
 
             <button className="bg-[#c9a96e] text-black px-10 py-5 uppercase tracking-[0.3em] text-[11px] font-mono border border-[#c9a96e] hover:bg-transparent hover:text-[#c9a96e] transition-all duration-300">
 
@@ -122,7 +121,7 @@ export default function Hero() {
 
           {/* stats */}
 
-          <div className="flex gap-28 mt-24">
+          <div className="flex flex-col sm:flex-row gap-10 sm:gap-28 mt-24">
 
             {[
               ["9+", "Accepted Projects"],

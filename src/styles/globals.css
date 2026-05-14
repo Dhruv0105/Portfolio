@@ -6,6 +6,10 @@
   --bg:#050505;
   --gold:#c9a96e;
   --text:#f5f0e8;
+  
+  /* Required to maintain Hero/AnimatedBackground dynamic inline styles without changing dark mode appearance */
+  --accent-base: 201, 169, 110; 
+  --accent: rgb(var(--accent-base));
 }
 
 *{
@@ -43,7 +47,19 @@ body::before{
   color:black;
 }
 
-/* --- LIGHT THEME OVERRIDES --- */
+/* ========================================= */
+/* --- LIGHT THEME EXCLUSIVE OVERRIDES --- */
+/* ========================================= */
+
+html[data-theme='light'] {
+  --accent-base: 15, 23, 42; /* Deep Slate 900 for Light Theme (Premium & Professional) */
+  --accent-transparent-08: rgba(var(--accent-base), 0.08);
+  --accent-transparent-10: rgba(var(--accent-base), 0.10);
+  --accent-transparent-44: rgba(var(--accent-base), 0.27);
+  --accent-transparent-55: rgba(var(--accent-base), 0.33);
+  --accent-transparent-66: rgba(var(--accent-base), 0.40);
+}
+
 html[data-theme='light'] body {
   background: #fdfdfd;
   color: #111111;
@@ -51,10 +67,45 @@ html[data-theme='light'] body {
 
 html[data-theme='light'] body::before {
   background-image:
-    linear-gradient(rgba(201,169,110,0.15) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(201,169,110,0.15) 1px, transparent 1px);
+    linear-gradient(var(--accent-transparent-08) 1px, transparent 1px),
+    linear-gradient(90deg, var(--accent-transparent-08) 1px, transparent 1px) !important;
 }
 
+/* Theme-Aware Accent Mappings for Light Mode Only */
+html[data-theme='light'] .text-\[\#c9a96e\], html[data-theme='light'] .text-\[\#c9a95e\] { color: var(--accent) !important; }
+html[data-theme='light'] .bg-\[\#c9a96e\] { background-color: var(--accent) !important; color: #ffffff !important; }
+html[data-theme='light'] .border-\[\#c9a96e\] { border-color: var(--accent) !important; }
+
+html[data-theme='light'] .hover\:text-\[\#c9a96e\]:hover { color: var(--accent) !important; }
+html[data-theme='light'] .hover\:bg-\[\#c9a96e\]:hover { background-color: var(--accent) !important; color: #ffffff !important; }
+html[data-theme='light'] .hover\:border-\[\#c9a96e\]:hover { border-color: var(--accent) !important; }
+
+html[data-theme='light'] .group:hover .group-hover\:text-\[\#c9a96e\] { color: var(--accent) !important; }
+html[data-theme='light'] .group:hover .group-hover\:border-\[\#c9a96e\] { border-color: var(--accent) !important; }
+
+html[data-theme='light'] .via-\[\#c9a96e\] { --tw-gradient-via: var(--accent) !important; }
+
+html[data-theme='light'] .bg-\[\#c9a96e10\] { background-color: var(--accent-transparent-10) !important; }
+html[data-theme='light'] .bg-\[\#c9a96e08\] { background-color: var(--accent-transparent-08) !important; }
+html[data-theme='light'] .border-\[\#c9a96e44\] { border-color: var(--accent-transparent-44) !important; }
+html[data-theme='light'] .border-\[\#c9a96e55\] { border-color: var(--accent-transparent-55) !important; }
+html[data-theme='light'] .border-\[\#c9a96e66\] { border-color: var(--accent-transparent-66) !important; }
+html[data-theme='light'] .hover\:border-\[\#c9a96e55\]:hover { border-color: var(--accent-transparent-55) !important; }
+html[data-theme='light'] .focus\:border-\[\#c9a96e55\]:focus { border-color: var(--accent-transparent-55) !important; }
+
+html[data-theme='light'] ::selection {
+  background: var(--accent) !important;
+  color: #fff !important;
+}
+
+/* Improve gray text readability strictly in light mode */
+html[data-theme='light'] .text-gray-400 { color: #475569 !important; } 
+html[data-theme='light'] .text-gray-500 { color: #334155 !important; } 
+html[data-theme='light'] .text-gray-600 { color: #1e293b !important; } 
+html[data-theme='light'] .text-gray-700 { color: #0f172a !important; } 
+html[data-theme='light'] .text-gray-800 { color: #020617 !important; } 
+
+/* Light Theme Background Hardcode Fixes */
 html[data-theme='light'] .bg-\[\#050505\] { background-color: #fdfdfd !important; }
 html[data-theme='light'] .bg-\[\#101010\] { background-color: #ffffff !important; }
 html[data-theme='light'] .bg-\[\#111\] { background-color: #f5f5f5 !important; }
@@ -67,11 +118,4 @@ html[data-theme='light'] .border-\[\#2a2a2a\] { border-color: #d1d5db !important
 
 html[data-theme='light'] .text-\[\#f5f0e8\] { color: #111111 !important; }
 html[data-theme='light'] .text-white { color: #000000 !important; }
-
-html[data-theme='light'] .text-gray-400 { color: #4b5563 !important; }
-html[data-theme='light'] .text-gray-500 { color: #6b7280 !important; }
-html[data-theme='light'] .text-gray-600 { color: #374151 !important; }
-html[data-theme='light'] .text-gray-700 { color: #1f2937 !important; }
-html[data-theme='light'] .text-gray-800 { color: #111827 !important; }
-
 html[data-theme='light'] .bg-black\/40 { background-color: rgba(255, 255, 255, 0.7) !important; }

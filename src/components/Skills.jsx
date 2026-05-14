@@ -178,7 +178,7 @@ export default function Skills() {
           <h2
             style={{
               fontFamily: "Cormorant Garamond",
-              fontSize: "clamp(3rem,6vw,5rem)",
+              fontSize: "clamp(2.5rem,6vw,5rem)",
               fontWeight: 300,
               lineHeight: 1,
             }}

@@ -7,8 +7,8 @@ export default function AnimatedBackground() {
           className="absolute inset-0"
           style={{
             backgroundImage: `
-              linear-gradient(#c9a96e 1px, transparent 1px),
-              linear-gradient(90deg, #c9a96e 1px, transparent 1px)
+              linear-gradient(var(--accent) 1px, transparent 1px),
+              linear-gradient(90deg, var(--accent) 1px, transparent 1px)
             `,
             backgroundSize: "60px 60px",
           }}

@@ -45,7 +45,7 @@ export default function About() {
               className="mb-12 text-[#f5f0e8]"
               style={{
                 fontFamily: "Cormorant Garamond",
-                fontSize: "clamp(3rem,6vw,5rem)",
+                fontSize: "clamp(2.5rem,6vw,5rem)",
                 fontWeight: 300,
                 lineHeight: 1,
               }}
@@ -65,7 +65,7 @@ export default function About() {
 
             {/* intro */}
 
-            <div className="flex gap-6 mb-10">
+            <div className="flex flex-col sm:flex-row gap-6 mb-10">
 
               <div className="w-20 h-20 rounded-full overflow-hidden border border-[#c9a96e] flex-shrink-0">
 
