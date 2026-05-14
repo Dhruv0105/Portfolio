@@ -105,13 +105,19 @@ export default function Hero() {
 
           <div className="flex flex-col sm:flex-row gap-5 mt-14">
 
-            <button className="bg-[#c9a96e] text-black px-10 py-5 uppercase tracking-[0.3em] text-[11px] font-mono border border-[#c9a96e] hover:bg-transparent hover:text-[#c9a96e] transition-all duration-300">
+            <button 
+              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+              className="bg-[#c9a96e] text-black px-10 py-5 uppercase tracking-[0.3em] text-[11px] font-mono border border-[#c9a96e] hover:bg-transparent hover:text-[#c9a96e] transition-all duration-300"
+            >
 
               View My Work →
 
             </button>
 
-            <button className="border border-[#2a2a2a] px-10 py-5 uppercase tracking-[0.3em] text-[11px] font-mono hover:border-[#c9a96e] hover:text-[#c9a96e] transition-all duration-300">
+            <button 
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="border border-[#2a2a2a] px-10 py-5 uppercase tracking-[0.3em] text-[11px] font-mono hover:border-[#c9a96e] hover:text-[#c9a96e] transition-all duration-300"
+            >
 
               Get In Touch
 
