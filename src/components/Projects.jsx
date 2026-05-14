@@ -12,54 +12,65 @@ export default function Projects() {
 
       <div className="max-w-[1400px] mx-auto">
 
-        {/* section label */}
+        {/* header */}
 
-        <div className="flex items-center gap-4 mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
 
-          <span className="text-[#c9a96e] text-[10px] tracking-[0.4em] uppercase font-mono">
-            03
-          </span>
+          {/* section label */}
 
-          <div className="w-14 h-px bg-[#2a2a2a]" />
+          <div className="flex items-center gap-4 mb-16">
 
-          <span className="text-gray-500 text-[10px] tracking-[0.4em] uppercase font-mono">
-            Selected Projects
-          </span>
-
-        </div>
-
-        {/* heading */}
-
-        <div className="flex justify-between items-end mb-20 flex-wrap gap-10">
-
-          <h2
-            className="text-[#f5f0e8]"
-            style={{
-              fontFamily: "Cormorant Garamond",
-              fontSize: "clamp(2.5rem,6vw,5rem)",
-              fontWeight: 300,
-              lineHeight: 1,
-            }}
-          >
-
-            Crafted with{" "}
-
-            <span className="italic text-[#c9a96e]">
-
-              precision
-
+            <span className="text-[#c9a96e] text-[10px] tracking-[0.4em] uppercase font-mono">
+              03
             </span>
 
-          </h2>
+            <div className="w-14 h-px bg-[#2a2a2a]" />
 
-          <p className="max-w-xl text-gray-500 leading-8">
+            <span className="text-gray-500 text-[10px] tracking-[0.4em] uppercase font-mono">
+              Selected Projects
+            </span>
 
-            A collection of AI systems, cybersecurity research,
-            scalable applications, and modern digital experiences.
+          </div>
 
-          </p>
+          {/* heading */}
 
-        </div>
+          <div className="flex justify-between items-end mb-20 flex-wrap gap-10">
+
+            <h2
+              className="text-[#f5f0e8]"
+              style={{
+                fontFamily: "Cormorant Garamond",
+                fontSize: "clamp(2.5rem,6vw,5rem)",
+                fontWeight: 300,
+                lineHeight: 1,
+              }}
+            >
+
+              Crafted with{" "}
+
+              <span className="italic text-[#c9a96e]">
+
+                precision
+
+              </span>
+
+            </h2>
+
+            <p className="max-w-xl text-gray-500 leading-8">
+
+              A collection of AI systems, cybersecurity research,
+              scalable applications, and modern digital experiences.
+
+            </p>
+
+          </div>
+
+        </motion.div>
 
         {/* project grid */}
 
@@ -70,22 +81,20 @@ export default function Projects() {
             <motion.div
               key={project.id}
 
-              initial={{
-                opacity: 0,
-                y: 40,
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ 
+                y: -5, 
+                scale: 1.01, 
+                boxShadow: "0 10px 30px -15px rgba(201, 169, 110, 0.2)",
+                transition: { duration: 0.3, ease: "easeOut" }
               }}
-
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-
               transition={{
                 duration: 0.6,
-                delay: index * 0.08,
+                delay: index * 0.1,
+                ease: [0.25, 0.1, 0.25, 1],
               }}
-
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.2 }}
 
               className="group relative border border-[#1c1c1c] bg-[#101010] overflow-hidden hover:border-[#c9a96e55] transition-all duration-500"
             >

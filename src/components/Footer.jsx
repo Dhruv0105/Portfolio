@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 export default function Footer() {
 
   return (
@@ -62,17 +64,20 @@ export default function Footer() {
                 { name: "Phone", url: "tel:+918540922027" },
               ].map((item) => (
 
-                <a
+                <motion.a
+                  whileHover={{ y: -2, scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ duration: 0.2 }}
                   key={item.name}
                   href={item.url}
                   target={item.name === "Github" || item.name === "LinkedIn" ? "_blank" : undefined}
                   rel={item.name === "Github" || item.name === "LinkedIn" ? "noopener noreferrer" : undefined}
-                  className="text-[10px] uppercase tracking-[0.35em] text-gray-500 hover:text-[#c9a96e] transition-all duration-300 font-mono"
+                  className="text-[10px] uppercase tracking-[0.35em] text-gray-500 hover:text-[#c9a96e] transition-all duration-300 font-mono inline-block"
                 >
 
                   {item.name}
 
-                </a>
+                </motion.a>
 
               ))}
 

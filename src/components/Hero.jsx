@@ -2,6 +2,25 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.12,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 25 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] },
+    },
+  };
+
   return (
 
     <section className="min-h-screen flex items-center pt-24 px-[6vw] relative overflow-hidden">
@@ -30,15 +49,15 @@ export default function Hero() {
       <div className="max-w-[1400px] w-full mx-auto relative z-10">
 
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
           className="max-w-[780px]"
         >
 
           {/* available */}
 
-          <div className="flex items-center gap-3 mb-10">
+          <motion.div variants={itemVariants} className="flex items-center gap-3 mb-10">
 
             <div className="relative w-[10px] h-[10px]">
 
@@ -54,19 +73,20 @@ export default function Hero() {
 
             </p>
 
-          </div>
+          </motion.div>
 
           {/* role */}
 
-          <p className="text-[#c9a96e] uppercase tracking-[0.45em] text-[11px] mb-8 font-mono">
+          <motion.p variants={itemVariants} className="text-[#c9a96e] uppercase tracking-[0.45em] text-[11px] mb-8 font-mono">
 
             Full-Stack Developer & AI/ML Engineer
 
-          </p>
+          </motion.p>
 
           {/* heading */}
 
-          <h1
+          <motion.h1
+            variants={itemVariants}
             className="leading-[0.9] text-[#f5f0e8]"
             style={{
               fontFamily: "Cormorant Garamond",
@@ -87,11 +107,11 @@ export default function Hero() {
 
             that matter.
 
-          </h1>
+          </motion.h1>
 
           {/* description */}
 
-          <p className="mt-12 max-w-[700px] text-[20px] leading-[2.2rem] text-gray-400">
+          <motion.p variants={itemVariants} className="mt-12 max-w-[700px] text-[20px] leading-[2.2rem] text-gray-400">
 
             CS Engineering student at Chandigarh University,
             specializing in AI & ML.
@@ -99,35 +119,41 @@ export default function Hero() {
             I build scalable web applications and intelligent systems —
             from cybersecurity platforms to modern AI solutions.
 
-          </p>
+          </motion.p>
 
           {/* buttons */}
 
-          <div className="flex flex-col sm:flex-row gap-5 mt-14">
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-5 mt-14">
 
-            <button 
+            <motion.button 
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ duration: 0.2 }}
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-[#c9a96e] text-black px-10 py-5 uppercase tracking-[0.3em] text-[11px] font-mono border border-[#c9a96e] hover:bg-transparent hover:text-[#c9a96e] transition-all duration-300"
             >
 
               View My Work →
 
-            </button>
+            </motion.button>
 
-            <button 
+            <motion.button 
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ duration: 0.2 }}
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="border border-[#2a2a2a] px-10 py-5 uppercase tracking-[0.3em] text-[11px] font-mono hover:border-[#c9a96e] hover:text-[#c9a96e] transition-all duration-300"
             >
 
               Get In Touch
 
-            </button>
+            </motion.button>
 
-          </div>
+          </motion.div>
 
           {/* stats */}
 
-          <div className="flex flex-col sm:flex-row gap-10 sm:gap-28 mt-24">
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-10 sm:gap-28 mt-24">
 
             {[
               ["9+", "Accepted Projects"],
@@ -158,7 +184,7 @@ export default function Hero() {
 
             ))}
 
-          </div>
+          </motion.div>
 
         </motion.div>
 

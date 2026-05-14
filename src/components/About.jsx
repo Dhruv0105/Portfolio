@@ -13,7 +13,13 @@ export default function About() {
 
         {/* section label */}
 
-        <div className="flex items-center gap-4 mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+          viewport={{ once: true, amount: 0.2 }}
+          className="flex items-center gap-4 mb-16"
+        >
 
           <span className="text-[#c9a96e] text-[10px] tracking-[0.4em] uppercase font-mono">
             02
@@ -25,17 +31,17 @@ export default function About() {
             About Me
           </span>
 
-        </div>
+        </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-20">
 
           {/* LEFT SIDE */}
 
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+            viewport={{ once: true, amount: 0.2 }}
             className="relative z-50"
           >
 
@@ -116,7 +122,9 @@ export default function About() {
 
             <div className="flex flex-wrap gap-4 mt-12 relative z-50 pointer-events-auto">
 
-              <a
+              <motion.a
+                whileHover={{ y: -2, scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 href="https://github.com/Dhruv0105"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -124,9 +132,11 @@ export default function About() {
                 className="border border-[#1f1f1f] px-6 py-4 text-[10px] uppercase tracking-[0.35em] text-gray-500 font-mono hover:border-[#c9a96e55] hover:text-[#c9a96e] transition-all duration-300 inline-block cursor-pointer"
               >
                 GitHub ↗
-              </a>
+              </motion.a>
 
-              <a
+              <motion.a
+                whileHover={{ y: -2, scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 href="https://www.linkedin.com/in/dhruv-singh-46b7a9334"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -134,23 +144,27 @@ export default function About() {
                 className="border border-[#1f1f1f] px-6 py-4 text-[10px] uppercase tracking-[0.35em] text-gray-500 font-mono hover:border-[#c9a96e55] hover:text-[#c9a96e] transition-all duration-300 inline-block cursor-pointer"
               >
                 LinkedIn ↗
-              </a>
+              </motion.a>
 
-              <a
+              <motion.a
+                whileHover={{ y: -2, scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 href="mailto:hello.dhruv05@gmail.com"
                 onClick={(e) => e.stopPropagation()}
                 className="border border-[#1f1f1f] px-6 py-4 text-[10px] uppercase tracking-[0.35em] text-gray-500 font-mono hover:border-[#c9a96e55] hover:text-[#c9a96e] transition-all duration-300 inline-block cursor-pointer"
               >
                 Email ↗
-              </a>
+              </motion.a>
 
-              <a
+              <motion.a
+                whileHover={{ y: -2, scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 href="tel:+918540922027"
                 onClick={(e) => e.stopPropagation()}
                 className="border border-[#1f1f1f] px-6 py-4 text-[10px] uppercase tracking-[0.35em] text-gray-500 font-mono hover:border-[#c9a96e55] hover:text-[#c9a96e] transition-all duration-300 inline-block cursor-pointer"
               >
                 Call ↗
-              </a>
+              </motion.a>
 
             </div>
 
@@ -159,13 +173,14 @@ export default function About() {
           {/* RIGHT SIDE */}
 
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{
-              duration: 0.6,
+              duration: 0.7,
               delay: 0.1,
+              ease: [0.25, 0.1, 0.25, 1],
             }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2 }}
             className="space-y-6"
           >
 

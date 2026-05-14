@@ -151,59 +151,70 @@ export default function Skills() {
 
       <div className="px-[6vw]">
 
-        {/* label */}
+        {/* header */}
 
-        <div className="flex items-center gap-4 mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
 
-          <span className="text-[#c9a96e] text-[10px] tracking-[0.4em] uppercase font-mono">
+          {/* label */}
 
-            04
+          <div className="flex items-center gap-4 mb-16">
 
-          </span>
+            <span className="text-[#c9a96e] text-[10px] tracking-[0.4em] uppercase font-mono">
 
-          <div className="w-14 h-px bg-[#2a2a2a]" />
-
-          <span className="text-gray-500 text-[10px] tracking-[0.4em] uppercase font-mono">
-
-            Skills
-
-          </span>
-
-        </div>
-
-        {/* heading */}
-
-        <div className="flex justify-between flex-wrap gap-10 mb-20">
-
-          <h2
-            style={{
-              fontFamily: "Cormorant Garamond",
-              fontSize: "clamp(2.5rem,6vw,5rem)",
-              fontWeight: 300,
-              lineHeight: 1,
-            }}
-          >
-
-            Tools of the{" "}
-
-            <span className="italic text-[#c9a95e]">
-
-              trade
+              04
 
             </span>
 
-          </h2>
+            <div className="w-14 h-px bg-[#2a2a2a]" />
 
-          <p className="max-w-md text-gray-500 leading-8">
+            <span className="text-gray-500 text-[10px] tracking-[0.4em] uppercase font-mono">
 
-            A versatile stack spanning full-stack engineering,
-            AI systems,
-            cybersecurity operations,
-            and detection engineering.
+              Skills
 
-          </p>
+            </span>
 
-        </div>
+          </div>
+
+          {/* heading */}
+
+          <div className="flex justify-between flex-wrap gap-10 mb-20">
+
+            <h2
+              style={{
+                fontFamily: "Cormorant Garamond",
+                fontSize: "clamp(2.5rem,6vw,5rem)",
+                fontWeight: 300,
+                lineHeight: 1,
+              }}
+            >
+
+              Tools of the{" "}
+
+              <span className="italic text-[#c9a95e]">
+
+                trade
+
+              </span>
+
+            </h2>
+
+            <p className="max-w-md text-gray-500 leading-8">
+
+              A versatile stack spanning full-stack engineering,
+              AI systems,
+              cybersecurity operations,
+              and detection engineering.
+
+            </p>
+
+          </div>
+
+        </motion.div>
 
         {/* cards */}
 
@@ -215,22 +226,19 @@ export default function Skills() {
 
               key={group.title}
 
-              initial={{
-                opacity: 0,
-                y: 40,
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ 
+                y: -4, 
+                boxShadow: "0 10px 30px -15px rgba(201, 169, 110, 0.15)",
+                transition: { duration: 0.3, ease: "easeOut" }
               }}
-
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-
               transition={{
                 duration: 0.6,
-                delay: index * 0.08,
+                delay: index * 0.1,
+                ease: [0.25, 0.1, 0.25, 1],
               }}
-
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.2 }}
 
               className="border border-[#1c1c1c] bg-[#101010] p-8 hover:border-[#c9a96e44] transition-all duration-500"
             >

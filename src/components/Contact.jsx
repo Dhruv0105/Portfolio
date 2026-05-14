@@ -47,27 +47,35 @@ export default function Contact() {
     >
       <div className="max-w-[1400px] mx-auto">
 
-        {/* Label */}
-        <div className="flex items-center gap-4 mb-16">
-          <span className="text-[#c9a96e] text-[10px] tracking-[0.4em] uppercase font-mono">
-            05
-          </span>
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          {/* Label */}
+          <div className="flex items-center gap-4 mb-16">
+            <span className="text-[#c9a96e] text-[10px] tracking-[0.4em] uppercase font-mono">
+              05
+            </span>
 
-          <div className="w-14 h-px bg-[#2a2a2a]" />
+            <div className="w-14 h-px bg-[#2a2a2a]" />
 
-          <span className="text-gray-500 text-[10px] tracking-[0.4em] uppercase font-mono">
-            Contact
-          </span>
-        </div>
+            <span className="text-gray-500 text-[10px] tracking-[0.4em] uppercase font-mono">
+              Contact
+            </span>
+          </div>
+        </motion.div>
 
         <div className="grid md:grid-cols-2 gap-20">
 
           {/* Left Side */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+            viewport={{ once: true, amount: 0.2 }}
           >
             <h2
               className="mb-10"
@@ -136,13 +144,14 @@ export default function Contact() {
 
           {/* Right Side */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{
-              duration: 0.6,
+              duration: 0.7,
               delay: 0.1,
+              ease: [0.25, 0.1, 0.25, 1],
             }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2 }}
           >
             <form onSubmit={handleSubmit} className="space-y-6">
 
@@ -151,7 +160,7 @@ export default function Contact() {
                 name="name"
                 required
                 placeholder="Your Name"
-                className="w-full bg-[#101010] border border-[#1c1c1c] px-6 py-5 outline-none text-white focus:border-[#c9a96e55] transition-all duration-300"
+                className="w-full bg-[#101010] border border-[#1c1c1c] px-6 py-5 outline-none text-white focus:border-[#c9a96e] focus:shadow-[0_0_15px_rgba(201,169,110,0.15)] transition-all duration-300"
               />
 
               <input
@@ -159,7 +168,7 @@ export default function Contact() {
                 name="email"
                 required
                 placeholder="Your Email"
-                className="w-full bg-[#101010] border border-[#1c1c1c] px-6 py-5 outline-none text-white focus:border-[#c9a96e55] transition-all duration-300"
+                className="w-full bg-[#101010] border border-[#1c1c1c] px-6 py-5 outline-none text-white focus:border-[#c9a96e] focus:shadow-[0_0_15px_rgba(201,169,110,0.15)] transition-all duration-300"
               />
 
               <textarea
@@ -167,16 +176,19 @@ export default function Contact() {
                 required
                 rows="6"
                 placeholder="Your Message"
-                className="w-full bg-[#101010] border border-[#1c1c1c] px-6 py-5 outline-none text-white resize-none focus:border-[#c9a96e55] transition-all duration-300"
+                className="w-full bg-[#101010] border border-[#1c1c1c] px-6 py-5 outline-none text-white resize-none focus:border-[#c9a96e] focus:shadow-[0_0_15px_rgba(201,169,110,0.15)] transition-all duration-300"
               />
 
-              <button
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ duration: 0.2 }}
                 type="submit"
                 disabled={buttonText !== "Send Message"}
                 className="w-full bg-[#c9a96e] text-black py-5 uppercase tracking-[0.3em] text-[10px] font-mono hover:bg-transparent hover:text-[#c9a96e] border border-[#c9a96e] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {buttonText}
-              </button>
+              </motion.button>
 
             </form>
           </motion.div>
